@@ -1,0 +1,60 @@
+.selected1{
+	stroke-dasharray:817.33px; 
+	stroke-dashoffset:817.33px;
+	animation: dash 5s linear forwards;
+	animation-delay: 2s;
+}
+.selected2{
+	stroke-dasharray:13.217px; 
+	stroke-dashoffset:13.217px;
+	animation: dash 5s linear forwards;
+	animation-delay: 2s;
+
+}
+.selected3{
+	stroke-dasharray:726.625px; 
+	stroke-dashoffset:726.625px;
+	animation: dash 5s linear forwards;
+	animation-delay: 2s;
+
+}
+.selected4{
+	stroke-dasharray:13.556px; 
+	stroke-dashoffset:13.556px;
+	animation: dash 5s linear forwards;
+	animation-delay: 2s;
+
+}
+.selected5 {
+	stroke-dasharray:1098.098px; 
+	stroke-dashoffset:1098.098px;
+	animation: dash 5s linear forwards;
+	animation-delay: 2s;
+
+}
+.selected6{
+	stroke-dasharray:43.932px; 
+	stroke-dashoffset:43.932px;
+	animation: dash 5s linear forwards;
+	animation-delay: 2s;
+}
+
+@keyframes dash {
+	to {
+	stroke-dashoffset: 0;
+	}
+}
+
+@keyframes fill{
+	to {
+		fill: black;
+	}
+}
+path {
+	stroke:black;
+	stroke-width:1px;
+	fill: none;
+}
+svg{
+	color: white;
+}
