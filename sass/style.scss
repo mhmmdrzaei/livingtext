@@ -8,9 +8,6 @@
 */
 
 @import 'normalize';
-@import 'typography';
-@import 'navigation';
-@import 'sidebar';
 @import 'headerSvg';
 @import 'footer';
 /*
@@ -18,6 +15,9 @@
 Default Styling
 ====================================
 */
+html{
+	background-image: linear-gradient(#e2f4ec, #edae00);
+}
 
 img {
 	max-width: 100%;
@@ -25,6 +25,8 @@ img {
 
 body {
 	color: #333;
+	// background: E5F3EC;
+
 }
 
 .container {
@@ -42,6 +44,16 @@ body {
 	width: 100%;
 }
 
+section.mainPost {
+	margin: 30px auto;
+}
+
+.line {
+	max-width: 450px;
+	width: 50%;
+	margin: 0 auto;
+	border-top: 3px solid black;
+}
 
 
 

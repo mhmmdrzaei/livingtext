@@ -7,11 +7,13 @@
       query_posts( $args ); // hijack the main loop
       while ( have_posts() ) : the_post();
     ?>
-      <h2><?php the_title(); ?></h2>
-
+      <div class="line"></div>
+      <section class="mainPost">
         <?php
         the_content();
         ?>
+      </section>
+      <div class="line"></div>
           
 
        <?php endwhile; ?>
