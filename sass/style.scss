@@ -15,6 +15,11 @@
 Default Styling
 ====================================
 */
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
 html{
 	background-image: linear-gradient(#e2f4ec, #edae00);
 }
@@ -22,11 +27,23 @@ html{
 img {
 	max-width: 100%;
 }
+a {
+	text-decoration: none;
+	color:black;
+	&:hover {
+		text-decoration: underline;
+	}
+}
 
 body {
+	 font-family: "Times New Roman", Times, serif;
 	color: #333;
 	// background: E5F3EC;
 
+}
+h1 {
+	@include fontSize(27);
+	text-align: center;
 }
 
 .container {
@@ -43,9 +60,86 @@ body {
 .full {
 	width: 100%;
 }
+.pageContent{
+	min-height: 350px;
+	width: 90%;
+	margin: 30px auto;
+	img {
+		display: flex;
+		flex-flow: wrap;
+		max-width: 150px;
+		margin-top: 7px;
+	}
+}
+
+
+@keyframes fadeIn { from { opacity:0; opacity: 1\9; /* IE9 only */ } to { opacity:1; } }
+
+@keyframes twoShake {
+     0% {transform: translateX(28deg)}
+    33% {transform: translateX(.1px) }
+}
+@keyframes threeShake {
+     0% {transform: translateX(10deg)}
+    33% {transform: translateX(.1px) }
+}
+
+@keyframes skewSix { 
+	0% { transform: translateX(-33deg) }
+	10% {transform:skew(-20deg,-20deg)}
+	30% {transform:skew(-15deg,-15deg)}
+	60% {transform:skew(-10deg,-10deg)}
+	80%	 {transform:skew(-30deg,-30deg)}
+	100% { transform: translateX(-33deg) }
+}
+.menu {
+	list-style: none;
+	@include fontSize(15);
+	font-weight: bold;
+
+	li{
+		animation: fadeIn 10s
+	}
+	li:nth-child(1){
+		position: absolute;
+		top: 38%;
+		left: 37%;
+		transform: rotate(28deg);
+		&:hover{
+			animation: threeShake 5s infinite;	
+		}
+		
+
+	}
+	li:nth-child(2){
+		position: absolute;
+		top: 38%;
+		left: 45%;
+		transform: rotate(10deg);
+		&:hover {
+			animation: twoShake 5s infinite;
+		}
+	}
+	li:nth-child(3){
+		position: absolute;
+		top: 38%;
+		left: 60%;
+		transform: rotate(-33deg);
+		&:hover {
+			animation: skewSix 10s infinite;
+		}
+	}
+}
+
+
+.svg {
+	width: 700px;
+	margin: 60px auto;
+}
 
 section.mainPost {
-	margin: 30px auto;
+	margin: 50px auto;
+	padding: 0px 8%;
 }
 
 .line {
@@ -54,6 +148,170 @@ section.mainPost {
 	margin: 0 auto;
 	border-top: 3px solid black;
 }
+
+.circle {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 3px solid black;
+  margin: 0 20px;
+  display: inline-block;
+  color: white;
+  position: relative;
+}
+
+li.archive{
+	padding-bottom: 35px;
+	list-style: none;
+	align-items: center;
+    display: flex;
+    a {
+    	width: 185px;
+    }
+}
+
+.circle::before{
+  content: '';
+  position: absolute;
+  top: 30px;
+  // left: 1em;
+  width: 2px;
+  height: 40px;
+  background: black;
+  z-index: -1;
+}
+
+
+
+li.archive:first-child::before {
+  display: none;
+}
+
+.active {
+  text-decoration: line-through;
+}
+
+.active ~ li {
+  background: lightblue;
+}
+
+.active ~ li::before {
+  background: lightblue;
+}
+
+#archives {
+	list-style: none;
+	padding: 0;
+	display:table; 
+	margin:60px auto;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	padding-left: 20%;
+}
+
+.archive:nth-child(odd) {
+
+	direction: rtl;
+	position: relative;
+    right: 70%;
+    a {
+    	text-align: right;
+    	// right: -10px;
+    	// position: relative;
+    }
+}
+
+footer {
+	width: 90%;
+	margin: 30px auto;
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	justify-content: space-between; 
+	flex-flow: wrap;
+	align-items: center;
+}
+// .wp-block-image {
+// 	display: flex;
+// 	flex-flow: wrap;
+// 	width: 100%;
+// }
+
+//mediaquaries
+
+@media(max-width: 750px){
+	svg {
+		width: 88%;
+		height: 88%;
+	}
+	.svg {
+		margin: 15px auto 0 ;
+	}
+	.menu {
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		flex-flow: wrap;
+		margin-top: 0;
+	}
+
+	.menu li:nth-child(1), .menu li:nth-child(2), .menu li:nth-child(3) {
+		transform: rotate(0deg);
+		position: inherit;
+		animation: none;
+		&:hover{
+			animation: none;
+		}	
+
+	}
+	.pageContent {
+		margin:50px auto;
+	}
+
+}
+@media(max-width: 540px){
+
+	svg{
+		position: relative;
+		 right: 7%;
+	}
+	#archives {
+    padding: 0px 0 0 30%;
+	}
+}
+
+@media(max-width: 530px){
+
+	svg{
+		width: 45%;
+		position: relative;
+		 right: 0
+	}
+	#archives {
+    padding: 0;
+
+	}
+	.archive:nth-child(odd){
+		direction: ltr;
+		position: inherit;
+		right: 0;
+	}
+	.archive:nth-child(odd) a{
+		text-align: left;
+	}
+}
+
+@media(max-width:400px){
+
+	.menu{
+		display: block;
+		text-align: center;	
+	}
+}
+
+
+
 
 
 

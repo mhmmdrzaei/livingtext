@@ -1,7 +1,6 @@
 <footer>
-  <div class="container">
-    <h6>&copy; Untitled Art Society <?php echo date('Y'); ?></h6>
-  </div>
+  	<a href="mailto:thelivingtext@gmail.com" ><i class="far fa-envelope"></i> : thelivingtext (at) gmail (dot) com</a>
+    <p>&copy; Untitled Art Society <?php echo date('Y'); ?></p>
 </footer>
 
 <script>

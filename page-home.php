@@ -19,20 +19,26 @@
        <?php endwhile; ?>
       <?php wp_reset_query();?> 
     </section>
-
-    <section id="archives" aria-label="Living Text ArchivesArchives">
+    <h1>Archives</h1>
+    <ul id='archives' aria-label="Living Text Archives" >
     <?php $args = array( 'post_type' => 'post', 'order' => 'DSC', 'posts_per_page' => -1 );
       query_posts( $args ); // hijack the main loop
       while ( have_posts() ) : the_post();
     ?>
-      <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+    
+      <li class="archive">
+        <div class="circle"></div>
+       <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
         <?php the_title(); ?>
       </a>
+      </li>
+
+
           
 
        <?php endwhile; ?>
+    </ul>
       <?php wp_reset_query();?> 
-    </section>
 
 
   </div> <!-- /.container -->
