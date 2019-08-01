@@ -45,6 +45,9 @@ h1 {
 	@include fontSize(27);
 	text-align: center;
 }
+header {
+	margin-bottom: 102px;
+}
 
 .container {
 	max-width: 1200px;
@@ -133,8 +136,12 @@ h1 {
 
 
 .svg {
-	width: 700px;
 	margin: 60px auto;
+	max-width: 43em;
+}
+svg {
+		// width: 65%;
+	    // height: 65%;
 }
 
 section.mainPost {
@@ -242,11 +249,14 @@ footer {
 
 @media(max-width: 750px){
 	svg {
-		width: 88%;
+		width: 88% !important;
 		height: 88%;
 	}
 	.svg {
 		margin: 15px auto 0 ;
+	}
+	header{
+		margin-bottom: 0;
 	}
 	.menu {
 		display: flex;
@@ -284,12 +294,12 @@ footer {
 @media(max-width: 530px){
 
 	svg{
-		width: 45%;
 		position: relative;
-		 right: 0
+		 right: -1%;
 	}
 	#archives {
     padding: 0;
+    margin: 60px 5%;
 
 	}
 	.archive:nth-child(odd){
@@ -302,7 +312,7 @@ footer {
 	}
 }
 
-@media(max-width:400px){
+@media(max-width:460px){
 
 	.menu{
 		display: block;

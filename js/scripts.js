@@ -3,14 +3,14 @@ $(function(){
 	if (window.innerWidth > 750){
 
 	 $("ul.menu li:nth-child(1)").animate(
-        {top : "+=4%", left: "-=12%"}, 10000, function() {}
+        {top : "+=7%", left: "-=12%"}, 10000, function() {}
     );
 
 	 $("ul.menu li:nth-child(2)").animate(
-        {top : "+=17%", left: "-=2%"}, 10000, function() {}
+        {top : "+=24%", left: "-=2%"}, 10000, function() {}
     );
 	 $("ul.menu li:nth-child(3)").animate(
-        {top : "+=3%", left: "+=8%"}, 10000, function() {}
+        {top : "+=8%", left: "+=10%"}, 10000, function() {}
     );
 
 	}
