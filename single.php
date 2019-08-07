@@ -2,7 +2,7 @@
 
 <div class="main">
   <div class="container">
-       <div class="line"></div>
+       <!-- <div class="line"></div> -->
       <section class="mainPost">
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 

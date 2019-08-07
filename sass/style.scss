@@ -42,7 +42,7 @@ body {
 
 }
 h1 {
-	@include fontSize(27);
+	@include fontSize(15);
 	text-align: center;
 }
 header {
@@ -67,6 +67,7 @@ header {
 	min-height: 350px;
 	width: 90%;
 	margin: 30px auto;
+	padding-top: 25px;
 	img {
 		display: flex;
 		flex-flow: wrap;
@@ -146,13 +147,15 @@ svg {
 
 section.mainPost {
 	margin: 50px auto;
-	padding: 0px 8%;
+	padding: 20px 8%;
+	@include fontSize(13);
+
 }
 
 .line {
 	max-width: 450px;
 	width: 50%;
-	margin: 0 auto;
+	margin: 0px auto 40px;
 	border-top: 3px solid black;
 }
 
@@ -212,10 +215,10 @@ li.archive:first-child::before {
 	list-style: none;
 	padding: 0;
 	display:table; 
-	margin:60px auto;
-	font-family: 'Montserrat', sans-serif;
+	margin:50px auto;
+	// font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	padding-left: 20%;
+	padding-left: 15%;
 }
 
 .archive:nth-child(odd) {
@@ -233,7 +236,7 @@ li.archive:first-child::before {
 footer {
 	width: 90%;
 	margin: 30px auto;
-	font-family: 'Montserrat', sans-serif;
+	// font-family: 'Montserrat', sans-serif;
 	display: flex;
 	justify-content: space-between; 
 	flex-flow: wrap;
@@ -277,6 +280,7 @@ footer {
 	}
 	.pageContent {
 		margin:50px auto;
+		// padding-top: 25px;
 	}
 
 }
