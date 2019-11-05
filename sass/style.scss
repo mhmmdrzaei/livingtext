@@ -46,7 +46,7 @@ h1 {
 	text-align: center;
 }
 header {
-	margin-bottom: 102px;
+	// margin-bottom: 102px;
 }
 
 .container {
@@ -100,45 +100,64 @@ header {
 	list-style: none;
 	@include fontSize(15);
 	font-weight: bold;
+	display: flex;
+		flex-flow: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+
 
 	li{
 		animation: fadeIn 10s
+	
 	}
-	li:nth-child(1){
-		position: absolute;
-		top: 38%;
-		left: 37%;
-		transform: rotate(28deg);
-		&:hover{
-			animation: threeShake 5s infinite;	
+	li:hover{
+			@include fontSize(15.5);
+			-webkit-transition: color 2s, font-size .2s;
+			    -moz-transition: color 2s, font-size .2s;
+			      -o-transition: color 2s, font-size .2s;
+			         transition: color 2s, font-size .2s;
 		}
+	}
+
+	// li:nth-child(1){
+	// 	position: absolute;
+	// 	top: 38%;
+	// 	left: 37%;
+	// 	transform: rotate(28deg);
+	// 	&:hover{
+	// 		animation: threeShake 5s infinite;	
+	// 	}
 		
 
-	}
-	li:nth-child(2){
-		position: absolute;
-		top: 38%;
-		left: 45%;
-		transform: rotate(10deg);
-		&:hover {
-			animation: twoShake 5s infinite;
-		}
-	}
-	li:nth-child(3){
-		position: absolute;
-		top: 38%;
-		left: 60%;
-		transform: rotate(-33deg);
-		&:hover {
-			animation: skewSix 10s infinite;
-		}
-	}
-}
+	// }
+	// li:nth-child(2){
+	// 	position: absolute;
+	// 	top: 38%;
+	// 	left: 45%;
+	// 	transform: rotate(10deg);
+	// 	&:hover {
+	// 		animation: twoShake 5s infinite;
+	// 	}
+	// }
+	// li:nth-child(3){
+	// 	position: absolute;
+	// 	top: 38%;
+	// 	left: 60%;
+	// 	transform: rotate(-33deg);
+	// 	&:hover {
+	// 		animation: skewSix 10s infinite;
+	// 	}
+	// }
+
 
 
 .svg {
-	margin: 60px auto;
+	margin: 50px auto 1px;
 	max-width: 43em;
+	position: relative;
+    left: -4%;
 }
 svg {
 		// width: 65%;
@@ -146,7 +165,7 @@ svg {
 }
 
 section.mainPost {
-	margin: 50px auto;
+	margin: 10px auto;
 	padding: 20px 8%;
 	@include fontSize(13);
 
@@ -237,10 +256,19 @@ footer {
 	width: 90%;
 	margin: 30px auto;
 	// font-family: 'Montserrat', sans-serif;
-	display: flex;
-	justify-content: space-between; 
-	flex-flow: wrap;
-	align-items: center;
+	.footerContact{
+		display: flex;
+		justify-content: space-between; 
+		flex-flow: wrap;
+		align-items: center;
+
+	}
+	.footerline{
+		width: 100%;
+		margin: 17px auto 10px;
+		border-top: 3px solid
+	}
+
 }
 // .wp-block-image {
 // 	display: flex;
@@ -257,6 +285,7 @@ footer {
 	}
 	.svg {
 		margin: 15px auto 0 ;
+		left:4%;
 	}
 	header{
 		margin-bottom: 0;
@@ -269,15 +298,15 @@ footer {
 		margin-top: 0;
 	}
 
-	.menu li:nth-child(1), .menu li:nth-child(2), .menu li:nth-child(3) {
-		transform: rotate(0deg);
-		position: inherit;
-		animation: none;
-		&:hover{
-			animation: none;
-		}	
+	// .menu li:nth-child(1), .menu li:nth-child(2), .menu li:nth-child(3) {
+	// 	transform: rotate(0deg);
+	// 	position: inherit;
+	// 	animation: none;
+	// 	&:hover{
+	// 		animation: none;
+	// 	}	
 
-	}
+	// }
 	.pageContent {
 		margin:50px auto;
 		// padding-top: 25px;
@@ -286,10 +315,6 @@ footer {
 }
 @media(max-width: 540px){
 
-	svg{
-		position: relative;
-		 right: 7%;
-	}
 	#archives {
     padding: 0px 0 0 30%;
 	}
@@ -299,7 +324,7 @@ footer {
 
 	svg{
 		position: relative;
-		 right: -1%;
+		 right: 3%;
 	}
 	#archives {
     padding: 0;

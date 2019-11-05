@@ -139,10 +139,7 @@
       </a>
     </div>
 
-    <?php wp_nav_menu( array(
-      'container' => false,
-      'theme_location' => 'primary'
-    )); ?>
+ 
   </div> <!-- /.container -->
 </header><!--/.header-->
 

@@ -1,6 +1,15 @@
 <footer>
-  	<a href="mailto:thelivingtext@gmail.com" ><i class="far fa-envelope"></i> : thelivingtext (at) gmail (dot) com</a>
-    <p>&copy; Untitled Art Society <?php echo date('Y'); ?></p>
+ <div class="footerline"></div>
+	   <?php wp_nav_menu( array(
+      'container' => false,
+      'theme_location' => 'primary'
+    )); ?>
+     <div class="footerline"></div>
+<div class="footerContact">
+		<a href="mailto:thelivingtext@gmail.com" ><i class="far fa-envelope"></i> : thelivingtext (at) gmail (dot) com</a>
+	  <p>&copy; Untitled Art Society <?php echo date('Y'); ?></p>
+</div>
+
 </footer>
 
 <script>
