@@ -2,6 +2,18 @@
 
 <div class="main">
   <div class="container">
+      <?php // Start the loop ?>
+      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+      <section class="mainPost">
+        <?php the_content(); ?>
+        
+      </section>
+      <div class="arrows" style="text-align: center;">
+        <i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i><i class="fas fa-arrow-down"></i>
+      </div>
+
+
+      <?php endwhile; // end the loop?>
     <section class="entry-content" aria-label="latest version">
     <?php $args = array( 'post_type' => 'post', 'order' => 'DSC', 'posts_per_page' => 1 );
       query_posts( $args ); // hijack the main loop
@@ -19,6 +31,13 @@
        <?php endwhile; ?>
       <?php wp_reset_query();?> 
     </section>
+   
+    <section class="contributors" id="contributors">
+             <h1>Contributors</h1>
+      <?php the_field('contributors'); ?>
+    </section>
+          <div class="line"></div>
+
     <h1>Archives</h1>
     <ul id='archives' aria-label="Living Text Archives" >
     <?php $args = array( 'post_type' => 'post', 'order' => 'DSC', 'posts_per_page' => -1 );

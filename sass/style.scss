@@ -68,6 +68,7 @@ header {
 	width: 90%;
 	margin: 30px auto;
 	padding-top: 25px;
+	@include fontSize(13);
 	img {
 		display: flex;
 		flex-flow: wrap;
@@ -174,7 +175,7 @@ section.mainPost {
 .line {
 	max-width: 450px;
 	width: 50%;
-	margin: 0px auto 40px;
+	margin: 0px auto 30px;
 	border-top: 3px solid black;
 }
 
@@ -219,7 +220,7 @@ li.archive:first-child::before {
 }
 
 .active {
-  text-decoration: line-through;
+  text-decoration: underline;
 }
 
 .active ~ li {
@@ -270,6 +271,11 @@ footer {
 	}
 
 }
+.contributors{
+	padding: 0px 8% 20px;
+	margin: 0px auto 10px;
+	@include fontSize(13);
+}
 // .wp-block-image {
 // 	display: flex;
 // 	flex-flow: wrap;
@@ -309,6 +315,7 @@ footer {
 	// }
 	.pageContent {
 		margin:50px auto;
+
 		// padding-top: 25px;
 	}
 
@@ -328,7 +335,7 @@ footer {
 	}
 	#archives {
     padding: 0;
-    margin: 60px 5%;
+    // margin: 60px 5%;
 
 	}
 	.archive:nth-child(odd){
